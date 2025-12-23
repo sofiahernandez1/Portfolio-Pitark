@@ -1,423 +1,463 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grade 2 Demo: Bootstrap + GSAP Scroll</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="./assets/css/otros.css" />
-    <!-- Custom Scripts -->
-    <script src="./assets/js/main.js" defer></script>
+    <title>Portfolio Sofía Hernández Pitarch</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/otros.css" />
   </head>
-  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Portfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
-    <main>
-      <!-- Hero Section -->
-      <section
-        id="hero"
-        class="hero min-vh-100 d-flex align-items-center position-relative overflow-hidden"
+  <body>
+    <div class="video-background-wrapper">
+      <video
+        class="bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        src="https://ik.imagekit.io/sofiahernandez/Portfolio/video%20home%20page.mp4?updatedAt=1765389226661"
+      ></video>
+      <div class="bg-overlay"></div>
+    </div>
+
+    <header class="site-header sticky-top" role="banner">
+      <nav
+        class="navbar navbar-expand-lg nav py-0"
+        role="navigation"
+        aria-label="principal"
       >
-        <!-- Parallax Background -->
-        <div class="hero-bg position-absolute w-100 h-100"></div>
+        <div class="container-fluid px-0">
+          <a class="navbar-brand brand brand--left" href="#top">K</a>
 
-        <!-- Floating shapes (GSAP animated) -->
-        <div class="floating-shapes">
-          <div class="shape shape-1"></div>
-          <div class="shape shape-2"></div>
-          <div class="shape shape-3"></div>
-        </div>
+          <button
+            class="navbar-toggler nav__toggle"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="container position-relative z-1 text-center text-white">
-          <h1 class="display-1 fw-bold hero-title">John Designer</h1>
-          <p class="lead hero-subtitle mb-4">
-            Full-Stack Developer & Creative Technologist
-          </p>
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary btn-lg me-3"
-              >View Projects</a
+          <div class="card glass-card text-black h-100">
+            <div
+              class="collapse navbar-collapse justify-content-center"
+              id="menu"
             >
-            <a href="#contact" class="btn btn-outline-light btn-lg"
-              >Get in Touch</a
-            >
+              <ul class="navbar-nav menu align-items-lg-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#poster">POSTER</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#album">ALBUM</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#editorial">EDITORIAL</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#branding">BRAND</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#work-3d">3D</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#visual">VISUAL</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">CONTACT</a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <!-- Scroll indicator -->
-        <div
-          class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4"
-        >
-          <div class="mouse"></div>
+          <a
+            class="navbar-brand brand brand--right d-none d-lg-inline-flex"
+            href="#top"
+            >K</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section id="hero" class="hero">
+        <div class="hero-content">
+          <div class="hero-text text-center text-lg-start">
+            <p class="subtitle mb-0">GRAPHIC DESIGN PORTFOLIO</p>
+            <h1 class="titulo-pitark">PITARK</h1>
+          </div>
         </div>
       </section>
 
-      <!-- About Section -->
-      <section id="about" class="py-5 py-lg-6 bg-dark">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <div class="about-image gsap-reveal">
+      <section class="bigtype" id="bigType">
+        <div class="bigtype__sticky">
+          <div class="bigtype__lines" id="bigTypeLines">
+            <a class="line" href="#about">ABOUT</a>
+            <a class="line" href="#poster">POSTER</a>
+            <a class="line" href="#album">ALBUM</a>
+            <a class="line" href="#editorial">EDITORIAL</a>
+            <a class="line" href="#branding">BRAND</a>
+            <a class="line" href="#work-3d">3D</a>
+            <a class="line" href="#visual">VISUAL</a>
+            <a class="line" href="#contact">CONTACT</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="about-top-bar">
+          <span class="top-item">MADRID</span>
+          <span class="top-item center">SOFÍA HERNÁNDEZ PITARCH</span>
+          <span class="top-item right">21 YEARS</span>
+        </div>
+
+        <div
+          class="container h-100 position-relative z-2 d-flex flex-column justify-content-center about-content-wrapper"
+        >
+          <div class="row align-items-center justify-content-center">
+            <div
+              class="col-lg-3 col-md-12 text-lg-end text-center mb-4 mb-lg-0"
+            >
+              <p class="about-text">
+                Hello! My name is Sofía Hernández Pitarch, and I'm a graphic
+                design student from Madrid. My work is based on a strong
+                capacity for adaptability and problem-solving, qualities that
+                allow me to approach each project with an analytical and
+                creative perspective. I enjoy teamwork and always maintain clear
+                and effective communication, ensuring a smooth and collaborative
+                work.
+              </p>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-12 text-center mb-4 mb-lg-0 position-relative"
+            >
+              <img
+                class="about-photo"
+                src="https://ik.imagekit.io/sofiahernandez/Portfolio/foto%20mia%20home%203.heic?updatedAt=1765447073272"
+                alt="Sofía Hernández"
+              />
+            </div>
+
+            <div class="col-lg-3 col-md-12 text-lg-start text-center">
+              <p class="about-text">
+                Furthermore, I practice continuous learning, which allows me to
+                update my knowledge and stay current with new design tools,
+                trends, and methodologies. This portfolio brings together the
+                most important projects from my journey as a graphic designer,
+                in which I explain the brief and the design decisions made for
+                each project.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="about-big-title">ABOUT</h1>
+      </section>
+
+      <section id="poster" class="poster-section">
+        <div class="container-fluid px-3 px-lg-4">
+          <div class="poster-header">
+            <h2 class="poster-title-main">POSTER</h2>
+            <h3 class="poster-title-sub">(BEST WORKS)<br />21-25</h3>
+          </div>
+
+          <div class="poster-grid">
+            <div
+              class="poster-item js-open-modal"
+              data-title="DIESEL MAGAZINE"
+              data-description="2025<br>Madrid<br>Adobe Photoshop / Illustrator / Indesign<br><br>Design of a cover for Diesel magazine, with the aesthetic of rebellion, provocation and urban culture that characterizes the brand."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/poster01.jpg?updatedAt=1766339446226"
+            >
+              <div class="poster-info"><span>01</span><span>DIESEL</span></div>
+              <img
+                class="poster-img"
+                src="https://ik.imagekit.io/sofiahernandez/Portfolio/poster01.jpg?updatedAt=1766339446226"
+                alt="Diesel Poster"
+              />
+            </div>
+
+            <div
+              class="poster-item js-open-modal"
+              data-title="IT'S ALL JUST A DREAM?"
+              data-description="2024<br>Madrid<br>Adobe Photoshop / Indesign<br><br>Design of a creative and personal poster in which I intend to reflect the doubts of human existence, the fine line that separates reality from the imaginary."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/poster02.jpg?updatedAt=1766339558208"
+            >
+              <div class="poster-info"><span>02</span><span>DREAM</span></div>
+              <img
+                class="poster-img"
+                src="https://ik.imagekit.io/sofiahernandez/Portfolio/poster02.jpg?updatedAt=1766339558208"
+                alt="Dream Poster"
+              />
+            </div>
+
+            <div
+              class="poster-item js-open-modal"
+              data-title="GQ MAGAZINE"
+              data-description="2024<br>Madrid<br>Adobe Photoshop / Indesign<br><br>Redesign of a GQ magazine cover featuring Jack Bridgland's iconic photographs of Robert Pattinson. Applying Bridgland's characteristic modern, edgy, and innovative aesthetic to the entire design."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/poster03.jpg?updatedAt=1766339579979"
+            >
+              <div class="poster-info"><span>03</span><span>GQ</span></div>
+              <img
+                class="poster-img"
+                src="https://ik.imagekit.io/sofiahernandez/Portfolio/poster03.jpg?updatedAt=1766339579979"
+                alt="GQ Poster"
+              />
+            </div>
+
+            <div
+              class="poster-item js-open-modal"
+              data-title="ETERNAL SUNSHINE OF THE SPOTLESS MIND"
+              data-description="2025<br>Madrid<br>Photoshop / Indesign<br><br>Poster design for the film “Eternal Sunshine of the Spotless Mind”, using the technique of depicting the protagonists as luminous beings with no recognizable features, alluding to the search for identity and connections beyond the physical that the film explores."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/poster04.jpg?updatedAt=1766339436932"
+            >
+              <div class="poster-info">
+                <span>04</span><span>SPOTLESS</span>
+              </div>
+              <img
+                class="poster-img"
+                src="https://ik.imagekit.io/sofiahernandez/Portfolio/poster04.jpg?updatedAt=1766339436932"
+                alt="Spotless Poster"
+              />
+            </div>
+
+            <div
+              class="poster-item js-open-modal"
+              data-title="THE METAMORFOSIS"
+              data-description="2023<br>Madrid<br>Adobe Photoshop / Indesign<br><br>Design of a poster for a magazine based on the book The Metamorphosis by Franz Kafka. In this poster, I try to reflect both the ideas of the magazine and the book, which are based on the dehumanization and loss of identity of the individual caused by society."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/poster05.jpg?updatedAt=1766339420212"
+            >
+              <div class="poster-info">
+                <span>05</span><span>METAMORFOSIS</span>
+              </div>
+              <img
+                class="poster-img"
+                src="https://ik.imagekit.io/sofiahernandez/Portfolio/poster05.jpg?updatedAt=1766339420212"
+                alt="Metamorfosis Poster"
+              />
+            </div>
+
+            <div
+              class="poster-item js-open-modal"
+              data-title="HELVETICA TYPEFACE"
+              data-description="2025<br>Madrid<br>Adobe Illustrator<br><br>Design of a typographic poster with a modernist and Swiss aesthetic that pays homage to Helvetica, using the typeface itself as a structural and expressive element. The entire composition reinforces the ideas of neutrality, order, functionality, and modernity—key values ​​associated with this typeface."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/poster06.jpg"
+            >
+              <div class="poster-info">
+                <span>06</span><span>HELVETICA</span>
+              </div>
+              <img
+                class="poster-img"
+                src="https://ik.imagekit.io/sofiahernandez/Portfolio/poster06.jpg"
+                alt="Helvetica Poster"
+              />
+            </div>
+
+            <div
+              class="poster-item js-open-modal"
+              data-title="PAIN"
+              data-description="2025<br>Madrid<br>Adobe Photoshop / Illustrator / Indesign<br><br>Redesign of a creative poster based on a photograph of the sculpture of Our Lady of Sorrows. The aim is to reflect, in a contemporary and modern way, the values ​​that this Virgin represents and how she continues to have an impact today."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/poster07.jpg"
+            >
+              <div class="poster-info"><span>07</span><span>PAIN</span></div>
+              <img
+                class="poster-img"
+                src="https://ik.imagekit.io/sofiahernandez/Portfolio/poster07.jpg"
+                alt="Pain Poster"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="album" class="album-section">
+        <div
+          class="container-fluid h-100 d-flex flex-column justify-content-between p-0"
+        >
+          <div class="album-header">
+            <h2 class="album-big-title">ALBUM<br />COVER</h2>
+          </div>
+
+          <div class="album-gallery">
+            <div
+              class="album-item js-open-album"
+              data-title="SONG COVER OF<br>CAMARON"
+              data-meta="MADRID | 2025 | ADOBE PHOTOSHOP / ADOBE ILLUSTRATOR"
+              data-desc="Cover design for a rap song, developed with an intimate and raw aesthetic that aims to reflect the artist's personal identity. The project focuses on conveying a sense of closeness and authenticity through a direct, unembellished visual approach. The composition and graphic treatment are carefully crafted to enhance the emotional character of the piece."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/album01.png?updatedAt=1766429705545"
+            >
+              <div class="album-thumb-info">
+                <span class="alb-num">01</span>
+                <span class="alb-name">CAMARON</span>
+              </div>
+              <div class="album-thumb-img-wrapper">
                 <img
-                  src="https://picsum.photos/600/700?random=10"
-                  alt="Profile"
-                  class="img-fluid rounded-4 shadow-lg"
+                  src="https://ik.imagekit.io/sofiahernandez/Portfolio/album01.png?updatedAt=1766429705545"
+                  alt="Camaron"
+                  class="album-thumb-img"
                 />
               </div>
             </div>
-            <div class="col-lg-6">
-              <h2 class="display-5 fw-bold mb-4 gsap-reveal">About Me</h2>
-              <p class="lead text-muted mb-4 gsap-reveal">
-                I'm a creative developer passionate about building beautiful,
-                functional, and accessible digital experiences.
-              </p>
-              <p class="text-muted gsap-reveal">
-                With 7+ years of experience spanning front-end development,
-                UI/UX design, and motion graphics, I bring a unique perspective
-                to every project. I believe in the power of animation to enhance
-                user experience without sacrificing performance.
-              </p>
 
-              <!-- Skills with animated progress -->
-              <div class="skills mt-5">
-                <div class="skill-item gsap-reveal mb-3">
-                  <div class="d-flex justify-content-between mb-2">
-                    <span class="fw-semibold">React / Next.js</span>
-                    <span class="text-muted">95%</span>
-                  </div>
-                  <div class="progress" style="height: 8px">
-                    <div class="progress-bar skill-bar" data-width="95"></div>
-                  </div>
-                </div>
-                <div class="skill-item gsap-reveal mb-3">
-                  <div class="d-flex justify-content-between mb-2">
-                    <span class="fw-semibold">GSAP / Animation</span>
-                    <span class="text-muted">90%</span>
-                  </div>
-                  <div class="progress" style="height: 8px">
-                    <div class="progress-bar skill-bar" data-width="90"></div>
-                  </div>
-                </div>
-                <div class="skill-item gsap-reveal mb-3">
-                  <div class="d-flex justify-content-between mb-2">
-                    <span class="fw-semibold">Node.js / Express</span>
-                    <span class="text-muted">85%</span>
-                  </div>
-                  <div class="progress" style="height: 8px">
-                    <div class="progress-bar skill-bar" data-width="85"></div>
-                  </div>
-                </div>
+            <div
+              class="album-item js-open-album"
+              data-title="CAPITANA DE<br>LA CAPITAL"
+              data-meta="MADRID | 2025 | ADOBE PHOTOSHOP / ILLUSTRATOR"
+              data-desc="Cover design for a rap album in which strong visual contrast is used to convey a sense of leadership, confidence, and power. The composition reinforces the artist's commanding presence and attitude, aligning with the album's urban and assertive identity."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/album02.png"
+            >
+              <div class="album-thumb-info">
+                <span class="alb-num">02</span>
+                <span class="alb-name">CAPITANA</span>
+              </div>
+              <div class="album-thumb-img-wrapper">
+                <img
+                  src="https://ik.imagekit.io/sofiahernandez/Portfolio/album02.png"
+                  alt="Capitana"
+                  class="album-thumb-img"
+                />
+              </div>
+            </div>
+
+            <div
+              class="album-item js-open-album"
+              data-title="ALBUM COVER<br>OF TESTING"
+              data-meta="MADRID | 2025 | ADOBE PHOTOSHOP / ILLUSTRATOR"
+              data-desc="Cover design for a hip-hop album where the use of black and white imagery combined with yellow typographic accents reinforces ideas of experimentation, risk, and boundary-breaking. The visual contrast creates a dynamic and tense atmosphere."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/album03.jpg"
+            >
+              <div class="album-thumb-info">
+                <span class="alb-num">03</span>
+                <span class="alb-name">TESTING</span>
+              </div>
+              <div class="album-thumb-img-wrapper">
+                <img
+                  src="https://ik.imagekit.io/sofiahernandez/Portfolio/album03.jpg"
+                  alt="Testing"
+                  class="album-thumb-img"
+                />
+              </div>
+            </div>
+
+            <div
+              class="album-item js-open-album"
+              data-title="ALBUM COVER<br>OF PUBERTY"
+              data-meta="MADRID | 2025 | ADOBE PHOTOSHOP / ILLUSTRATOR"
+              data-desc="Cover design for an indie music album in which the combination of visual elements creates an intimate and poetic atmosphere. The design aims to accompany the emotional process of change and personal growth suggested by the album's title."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/album04.jpg"
+            >
+              <div class="album-thumb-info">
+                <span class="alb-num">04</span>
+                <span class="alb-name">PUBERTY</span>
+              </div>
+              <div class="album-thumb-img-wrapper">
+                <img
+                  src="https://ik.imagekit.io/sofiahernandez/Portfolio/album04.jpg"
+                  alt="Puberty"
+                  class="album-thumb-img"
+                />
+              </div>
+            </div>
+
+            <div
+              class="album-item js-open-album"
+              data-title="DEVIL CAME<br>TO ME"
+              data-meta="MADRID | 2025 | ADOBE PHOTOSHOP / ILLUSTRATOR"
+              data-desc="Redesign of the album cover Devil Came to Me, focused on expressing the raw power and rebellious spirit of rock through an infernal visual aesthetic. The devil figure functions as a symbol of confrontation with fear, desire, and the forbidden."
+              data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/album05.jpg"
+            >
+              <div class="album-thumb-info">
+                <span class="alb-num">05</span>
+                <span class="alb-name">DEVIL CAME TO ME</span>
+              </div>
+              <div class="album-thumb-img-wrapper">
+                <img
+                  src="https://ik.imagekit.io/sofiahernandez/Portfolio/album05.jpg"
+                  alt="Devil"
+                  class="album-thumb-img"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects Section -->
-      <section id="projects" class="py-5 py-lg-6">
-        <div class="container">
-          <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold gsap-reveal">Featured Projects</h2>
-            <p class="lead text-muted gsap-reveal">
-              A selection of my recent work
-            </p>
+      <section id="editorial" style="min-height: 60vh"></section>
+      <section id="branding" style="min-height: 60vh"></section>
+      <section id="work-3d" style="min-height: 60vh"></section>
+      <section id="visual" style="min-height: 60vh"></section>
+      <section id="contact" style="min-height: 60vh"></section>
+
+      <div id="posterModalOverlay" class="modal-overlay">
+        <button id="modalCloseBtn" class="modal-close-text" aria-label="Cerrar">
+          CLOSE
+        </button>
+        <div class="modal-content-container">
+          <div class="modal-text-side">
+            <h3 id="modalTitle" class="modal-title"></h3>
+            <div id="modalDescription" class="modal-description"></div>
           </div>
-
-          <div class="row g-4">
-            <!-- Project Card 1 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=1"
-                    class="card-img-top"
-                    alt="E-commerce Platform"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">E-commerce Platform</h3>
-                  <p class="card-text text-muted small">
-                    Full-stack e-commerce solution with real-time inventory and
-                    Stripe integration.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >React</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Node.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >MongoDB</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 2 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=2"
-                    class="card-img-top"
-                    alt="Dashboard UI"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">Analytics Dashboard</h3>
-                  <p class="card-text text-muted small">
-                    Real-time data visualization with interactive charts and
-                    dark mode.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >D3.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >WebSocket</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >GSAP</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 3 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=3"
-                    class="card-img-top"
-                    alt="Mobile App"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">Fitness Mobile App</h3>
-                  <p class="card-text text-muted small">
-                    Cross-platform fitness tracker with workout plans and
-                    progress analytics.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >React Native</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Firebase</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 4 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=4"
-                    class="card-img-top"
-                    alt="Portfolio Site"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">Agency Website</h3>
-                  <p class="card-text text-muted small">
-                    Award-winning agency site with scroll-driven animations and
-                    3D elements.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Three.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >GSAP</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 5 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=5"
-                    class="card-img-top"
-                    alt="SaaS Platform"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">SaaS Platform</h3>
-                  <p class="card-text text-muted small">
-                    Multi-tenant SaaS with role-based access and subscription
-                    management.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Next.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Prisma</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 6 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=6"
-                    class="card-img-top"
-                    alt="AI Tool"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">AI Content Generator</h3>
-                  <p class="card-text text-muted small">
-                    GPT-powered content creation tool with custom fine-tuning
-                    options.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >OpenAI</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Python</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
+          <div class="modal-image-side">
+            <img
+              id="modalImage"
+              class="modal-image"
+              src=""
+              alt="Poster detail"
+            />
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- Contact Section -->
-      <section id="contact" class="py-5 py-lg-6 bg-dark">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-              <h2 class="display-5 fw-bold mb-4 gsap-reveal">
-                Let's Work Together
-              </h2>
-              <p class="lead text-muted mb-5 gsap-reveal">
-                Have a project in mind? I'd love to hear about it. Let's create
-                something amazing.
-              </p>
-              <div class="gsap-reveal">
-                <a
-                  href="mailto:hello@example.com"
-                  class="btn btn-primary btn-lg mb-4"
-                >
-                  Start a Conversation
-                </a>
-              </div>
-              <div
-                class="social-links gsap-reveal d-flex justify-content-center gap-4"
-              >
-                <a href="#" class="text-muted fs-4" aria-label="GitHub">
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                    />
-                  </svg>
-                </a>
-                <a href="#" class="text-muted fs-4" aria-label="LinkedIn">
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                    />
-                  </svg>
-                </a>
-                <a href="#" class="text-muted fs-4" aria-label="Twitter">
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                    />
-                  </svg>
-                </a>
-              </div>
+      <div id="albumModalOverlay" class="album-modal-overlay">
+        <button
+          id="albumModalCloseBtn"
+          class="album-modal-close"
+          aria-label="Cerrar"
+        >
+          CLOSE
+        </button>
+        <div class="album-modal-container">
+          <div class="album-modal-info">
+            <h2 id="albModalTitle" class="alb-modal-title">
+              ALBUM COVER<br />TITLE
+            </h2>
+            <div class="alb-modal-meta-row">
+              <span id="albModalMeta">MADRID | 2025 | ADOBE PHOTOSHOP</span>
             </div>
+            <p id="albModalDesc" class="alb-modal-text">Description...</p>
+          </div>
+          <div class="album-modal-image-wrapper">
+            <img
+              id="albModalImg"
+              src=""
+              alt="Album Cover"
+              class="alb-modal-img"
+            />
           </div>
         </div>
-      </section>
+      </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="py-4 text-center text-muted small">
-      <div class="container">
-        <p class="mb-0">
-          &copy; 2025 John Designer. Built with Bootstrap 5 + GSAP.
-        </p>
-      </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- GSAP + Plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
