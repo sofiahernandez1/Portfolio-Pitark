@@ -1,28 +1,22 @@
-// 1) Cambiar estilo del header al hacer scroll
+// header con sombra al hacer scroll
 const header = document.querySelector(".site-header");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 2) header.classList.add("scrolled");
-  else header.classList.remove("scrolled");
-});
+window.addEventListener("scroll", () =>
+  header.classList.toggle("scrolled", window.scrollY > 2)
+);
 
-// 2) Cerrar el menú Bootstrap al clicar un enlace en móvil
+// cerrar menú al click en móvil
 document.querySelectorAll("#menu .nav-link").forEach((link) => {
   link.addEventListener("click", () => {
-    const menuEl = document.querySelector("#menu");
-    if (menuEl.classList.contains("show")) {
-      const bsCollapse = bootstrap.Collapse.getOrCreateInstance(menuEl);
-      bsCollapse.hide();
-    }
+    const menu = document.querySelector("#menu");
+    if (!menu.classList.contains("show")) return;
+    bootstrap.Collapse.getOrCreateInstance(menu).hide();
   });
 });
 
-// 3) Letras grandes suben con el scroll dentro de .bigtype
+// bigtype: mover letras con scroll
 const bigTypeSection = document.querySelector("#bigType");
 const bigTypeLines = document.querySelector("#bigTypeLines");
-
-function clamp(n, min, max) {
-  return Math.max(min, Math.min(max, n));
-}
+const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
 
 function updateBigType() {
   if (!bigTypeSection || !bigTypeLines) return;
@@ -34,108 +28,96 @@ function updateBigType() {
   const scrolled = clamp(-rect.top, 0, total);
   const t = total > 0 ? scrolled / total : 0;
 
-  const maxMove = vh * 0.45;
-  const ty = (0.5 - t) * maxMove;
-
-  bigTypeLines.style.setProperty("--ty", `${ty}px`);
+  bigTypeLines.style.setProperty("--ty", `${(0.5 - t) * (vh * 0.45)}px`);
 }
 
 window.addEventListener("scroll", updateBigType, { passive: true });
 window.addEventListener("resize", updateBigType);
 updateBigType();
 
-// ==========================================
-// LÓGICA DE MODALES (POSTER + ALBUM)
-// ==========================================
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Main.js loaded and DOM ready - Initializing Modals");
-
-  // --- 1. MODAL POSTERS ---
-  const posterItems = document.querySelectorAll(".js-open-modal");
-  const modalOverlay = document.getElementById("posterModalOverlay");
-  const modalCloseBtn = document.getElementById("modalCloseBtn");
-
+document.addEventListener("DOMContentLoaded", () => {
+  // --- modal posters (y también 3D porque comparte clase) ---
+  const posterOverlay = document.getElementById("posterModalOverlay");
+  const posterClose = document.getElementById("modalCloseBtn");
   const modalTitle = document.getElementById("modalTitle");
   const modalDesc = document.getElementById("modalDescription");
-  const modalImage = document.getElementById("modalImage");
+  const modalImg = document.getElementById("modalImage");
 
-  function openModal(e) {
-    const clickedPoster = e.currentTarget;
-    modalTitle.innerHTML = clickedPoster.getAttribute("data-title");
-    modalDesc.innerHTML = clickedPoster.getAttribute("data-description");
-    modalImage.src = clickedPoster.getAttribute("data-image");
-    modalImage.alt = clickedPoster.getAttribute("data-title");
-
-    if (modalOverlay) modalOverlay.classList.add("is-active");
+  const openPoster = (el) => {
+    modalTitle.innerHTML = el.getAttribute("data-title");
+    modalDesc.innerHTML = el.getAttribute("data-description");
+    modalImg.src = el.getAttribute("data-image");
+    modalImg.alt = el.getAttribute("data-title");
+    posterOverlay.classList.add("is-active");
     document.body.style.overflow = "hidden";
-  }
+  };
 
-  function closeModal() {
-    if (modalOverlay) modalOverlay.classList.remove("is-active");
+  const closePoster = () => {
+    posterOverlay.classList.remove("is-active");
     document.body.style.overflow = "";
-    if (modalImage) {
-      setTimeout(() => {
-        modalImage.src = "";
-      }, 300);
-    }
-  }
+    setTimeout(() => (modalImg.src = ""), 300);
+  };
 
-  if (posterItems)
-    posterItems.forEach((item) => item.addEventListener("click", openModal));
-  if (modalCloseBtn)
-    modalCloseBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeModal();
-    });
+  document
+    .querySelectorAll(".js-open-modal")
+    .forEach((item) => item.addEventListener("click", () => openPoster(item)));
+  posterClose.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closePoster();
+  });
 
-  // --- 2. MODAL ALBUMS ---
-  const albumItems = document.querySelectorAll(".js-open-album");
+  // --- modal albums ---
   const albumOverlay = document.getElementById("albumModalOverlay");
-  const albumCloseBtn = document.getElementById("albumModalCloseBtn");
-
+  const albumClose = document.getElementById("albumModalCloseBtn");
   const albTitle = document.getElementById("albModalTitle");
   const albMeta = document.getElementById("albModalMeta");
   const albDesc = document.getElementById("albModalDesc");
   const albImg = document.getElementById("albModalImg");
 
-  function openAlbumModal(e) {
-    const item = e.currentTarget;
-
-    // Inyectar datos
-    albTitle.innerHTML = item.getAttribute("data-title");
-    albMeta.textContent = item.getAttribute("data-meta");
-    albDesc.innerHTML = item.getAttribute("data-desc");
-    albImg.src = item.getAttribute("data-image");
-
-    if (albumOverlay) albumOverlay.classList.add("is-active");
+  const openAlbum = (el) => {
+    albTitle.innerHTML = el.getAttribute("data-title");
+    albMeta.textContent = el.getAttribute("data-meta");
+    albDesc.innerHTML = el.getAttribute("data-desc");
+    albImg.src = el.getAttribute("data-image");
+    albumOverlay.classList.add("is-active");
     document.body.style.overflow = "hidden";
-  }
+  };
 
-  function closeAlbumModal() {
-    if (albumOverlay) albumOverlay.classList.remove("is-active");
+  const closeAlbum = () => {
+    albumOverlay.classList.remove("is-active");
     document.body.style.overflow = "";
-    setTimeout(() => {
-      if (albImg) albImg.src = "";
-    }, 300);
-  }
+    setTimeout(() => (albImg.src = ""), 300);
+  };
 
-  if (albumItems)
-    albumItems.forEach((item) =>
-      item.addEventListener("click", openAlbumModal)
-    );
-  if (albumCloseBtn)
-    albumCloseBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAlbumModal();
+  document
+    .querySelectorAll(".js-open-album")
+    .forEach((item) => item.addEventListener("click", () => openAlbum(item)));
+  albumClose.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeAlbum();
+  });
+
+  // cerrar con ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (posterOverlay.classList.contains("is-active")) closePoster();
+    if (albumOverlay.classList.contains("is-active")) closeAlbum();
+  });
+
+  // --- gallery toggle ---
+  document.querySelectorAll("[data-gallery]").forEach((gallery) => {
+    const items = gallery.querySelectorAll("[data-gallery-item]");
+
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        const active = item.classList.contains("is-active");
+        items.forEach((it) => it.classList.remove("is-active"));
+        gallery.classList.remove("has-active");
+        if (!active) {
+          item.classList.add("is-active");
+          gallery.classList.add("has-active");
+        }
+      });
     });
-
-  // --- 3. CERRAR AMBOS CON ESC ---
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      if (modalOverlay && modalOverlay.classList.contains("is-active"))
-        closeModal();
-      if (albumOverlay && albumOverlay.classList.contains("is-active"))
-        closeAlbumModal();
-    }
   });
 });
