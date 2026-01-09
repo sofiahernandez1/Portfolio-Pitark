@@ -22,29 +22,29 @@
   </head>
 
   <body>
-    <div class="video-background-wrapper">
+    <div class="bloque-video-fondo">
       <video
-        class="bg-video"
+        class="video-fondo"
         autoplay
         muted
         loop
         playsinline
         src="https://ik.imagekit.io/sofiahernandez/Portfolio/video%20home%20page.mp4?updatedAt=1765389226661"
       ></video>
-      <div class="bg-overlay"></div>
+      <div class="oscuridad-video-fondo"></div>
     </div>
 
-    <header class="site-header sticky-top" role="banner">
+    <header class="header-fijo sticky-top" role="banner">
       <nav
         class="navbar navbar-expand-lg nav py-0"
         role="navigation"
         aria-label="principal"
       >
         <div class="container-fluid px-0">
-          <a class="navbar-brand brand brand--left" href="#top">K</a>
+          <a class="navbar-brand logo logo-left" href="#top">K</a>
 
           <button
-            class="navbar-toggler nav__toggle"
+            class="navbar-toggler boton-hamburguesa"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#menu"
@@ -77,7 +77,7 @@
                   <a class="nav-link" href="#design3d">3D</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#visual">GALLERY</a>
+                  <a class="nav-link" href="#gallery">GALLERY</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#contact">CONTACT</a>
@@ -87,7 +87,7 @@
           </div>
 
           <a
-            class="navbar-brand brand brand--right d-none d-lg-inline-flex"
+            class="navbar-brand logo logo-right d-none d-lg-inline-flex"
             href="#top"
             >K</a
           >
@@ -99,27 +99,27 @@
       <section id="hero" class="hero">
         <div class="hero-content">
           <div class="hero-text text-center text-lg-start">
-            <p class="subtitle mb-0">GRAPHIC DESIGN PORTFOLIO</p>
+            <p class="subtitulo-graphic-designer mb-0">
+              GRAPHIC DESIGN PORTFOLIO
+            </p>
             <h1 class="titulo-pitark">PITARK</h1>
           </div>
         </div>
       </section>
 
-      <section class="bigtype" id="bigType">
-        <div class="bigtype__sticky">
-          <div class="bigtype__lines" id="bigTypeLines">
-            <a class="line" href="#about">ABOUT</a>
-            <a class="line" href="#poster">POSTER</a>
-            <a class="line" href="#album">ALBUM</a>
-            <a class="line" href="#editorial">EDITORIAL</a>
-            <a class="line" href="#design3d">3D</a>
-            <a class="line" href="#visual">GALLERY</a>
-            <a class="line" href="#contact">CONTACT</a>
-          </div>
+      <section class="seccion-menu-grande" id="bigType">
+        <div class="texto-menu-grande" id="bigTypeLines">
+          <a class="palabra-menu-grande" href="#about">ABOUT</a>
+          <a class="palabra-menu-grande" href="#poster">POSTER</a>
+          <a class="palabra-menu-grande" href="#album">ALBUM</a>
+          <a class="palabra-menu-grande" href="#editorial">EDITORIAL</a>
+          <a class="palabra-menu-grande" href="#design3d">3D</a>
+          <a class="palabra-menu-grande" href="#gallery">GALLERY</a>
+          <a class="palabra-menu-grande" href="#contact">CONTACT</a>
         </div>
       </section>
 
-      <section id="about" class="about-section">
+      <section id="about" class="seccion-about">
         <div class="about-top-bar">
           <span class="top-item">MADRID</span>
           <span class="top-item center">SOFÍA HERNÁNDEZ PITARCH</span>
@@ -127,7 +127,7 @@
         </div>
 
         <div
-          class="container h-100 position-relative z-2 d-flex flex-column justify-content-center about-content-wrapper"
+          class="container h-100 position-relative z-2 d-flex flex-column justify-content-center contenido-about-wrapper"
         >
           <div class="row align-items-center justify-content-center">
             <div
@@ -149,7 +149,7 @@
             >
               <img
                 class="about-photo"
-                src="https://ik.imagekit.io/sofiahernandez/Portfolio/foto%20mia%20home%203.heic?updatedAt=1765447073272"
+                src="https://ik.imagekit.io/sofiahernandez/Portfolio/Foto%20mia%20home%204%20byn.jpg"
                 alt="Sofía Hernández"
               />
             </div>
@@ -167,17 +167,17 @@
           </div>
         </div>
 
-        <h1 class="about-big-title">ABOUT</h1>
+        <h1 class="titulo-about">ABOUT</h1>
       </section>
 
-      <section id="poster" class="poster-section">
+      <section id="poster" class="seccion-poster">
         <div class="container-fluid px-3 px-lg-4">
           <div class="poster-header">
-            <h2 class="poster-title-main">POSTER</h2>
-            <h3 class="poster-title-sub">(BEST WORKS)<br />21-25</h3>
+            <h2 class="titulo-poster">POSTER</h2>
+            <h3 class="subtitulo-poster">(BEST WORKS)<br />21-25</h3>
           </div>
 
-          <div class="poster-grid">
+          <div class="galeria-posters">
             <div
               class="poster-item js-open-modal"
               data-title="DIESEL MAGAZINE"
@@ -290,10 +290,10 @@
           class="container-fluid h-100 d-flex flex-column justify-content-between p-0"
         >
           <div class="album-header">
-            <h2 class="album-big-title">ALBUM<br />COVER</h2>
+            <h2 class="titulo-album">ALBUM<br />COVER</h2>
           </div>
 
-          <div class="album-gallery">
+          <div class="galeria-album">
             <div
               class="album-item js-open-album"
               data-title="SONG COVER OF<br>CAMARON"
@@ -301,15 +301,15 @@
               data-desc="COVER DESIGN FOR A RAP SONG, DEVELOPED WITH AN INTIMATE AND RAW AESTHETIC THAT AIMS TO REFLECT THE ARTIST'S PERSONAL IDENTITY. THE PROJECT FOCUSES ON CONVEYING A SENSE OF CLOSENESS AND AUTHENTICITY THROUGH A DIRECT, UNEMBELLISHED VISUAL APPROACH"
               data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/album01.png?updatedAt=1766429705545"
             >
-              <div class="album-thumb-info">
-                <span class="alb-num">01</span>
-                <span class="alb-name">CAMARON</span>
+              <div class="album-info">
+                <span class="album-num">01</span>
+                <span class="album-name">CAMARON</span>
               </div>
-              <div class="album-thumb-img-wrapper">
+              <div class="contenedor-album-img">
                 <img
                   src="https://ik.imagekit.io/sofiahernandez/Portfolio/album01.png?updatedAt=1766429705545"
                   alt="Camaron"
-                  class="album-thumb-img"
+                  class="album-img"
                 />
               </div>
             </div>
@@ -321,15 +321,15 @@
               data-desc="COVER DESIGN FOR A RAP ALBUM IN WHICH STRONG VISUAL CONTRAST IS USED TO CONVEY A SENSE OF LEADERSHIP, CONFIDENCE, AND POWER. THE COMPOSITION REINFORCES THE ARTIST'S COMMANDING PRESENCE AND ATTITUDE, ALIGNING WITH THE ALBUM'S URBAN AND ASSERTIVE IDENTITY"
               data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/album02.png"
             >
-              <div class="album-thumb-info">
-                <span class="alb-num">02</span>
-                <span class="alb-name">CAPITANA</span>
+              <div class="album-info">
+                <span class="album-num">02</span>
+                <span class="album-name">CAPITANA</span>
               </div>
-              <div class="album-thumb-img-wrapper">
+              <div class="contenedor-album-img">
                 <img
                   src="https://ik.imagekit.io/sofiahernandez/Portfolio/album02.png"
                   alt="Capitana"
-                  class="album-thumb-img"
+                  class="album-img"
                 />
               </div>
             </div>
@@ -341,15 +341,15 @@
               data-desc="COVER DESIGN FOR A HIP-HOP ALBUM WHERE THE USE OF BLACK AND WHITE IMAGERY COMBINED WITH YELLOW TYPOGRAPHIC ACCENTS REINFORCES IDEAS OF EXPERIMENTATION, RISK, AND BOUNDARY-BREAKING. THE VISUAL CONTRAST CREATES A DYNAMIC AND TENSE ATMOSPHERE"
               data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/album03.jpg"
             >
-              <div class="album-thumb-info">
-                <span class="alb-num">03</span>
-                <span class="alb-name">TESTING</span>
+              <div class="album-info">
+                <span class="album-num">03</span>
+                <span class="album-name">TESTING</span>
               </div>
-              <div class="album-thumb-img-wrapper">
+              <div class="contenedor-album-img">
                 <img
                   src="https://ik.imagekit.io/sofiahernandez/Portfolio/album03.jpg"
                   alt="Testing"
-                  class="album-thumb-img"
+                  class="album-img"
                 />
               </div>
             </div>
@@ -361,15 +361,15 @@
               data-desc="COVER DESIGN FOR AN INDIE MUSIC ALBUM IN WHICH THE COMBINATION OF VISUAL ELEMENTS CREATES AN INTIMATE AND POETIC ATMOSPHERE. THE DESIGN AIMS TO ACCOMPANY THE EMOTIONAL PROCESS OF CHANGE AND PERSONAL GROWTH SUGGESTED BY THE ALBUM'S TITLE"
               data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/album04.jpg"
             >
-              <div class="album-thumb-info">
-                <span class="alb-num">04</span>
-                <span class="alb-name">PUBERTY</span>
+              <div class="album-info">
+                <span class="album-num">04</span>
+                <span class="album-name">PUBERTY</span>
               </div>
-              <div class="album-thumb-img-wrapper">
+              <div class="contenedor-album-img">
                 <img
                   src="https://ik.imagekit.io/sofiahernandez/Portfolio/album04.jpg"
                   alt="Puberty"
-                  class="album-thumb-img"
+                  class="album-img"
                 />
               </div>
             </div>
@@ -381,15 +381,15 @@
               data-desc="REDESIGN OF THE ALBUM COVER DEVIL CAME TO ME, FOCUSED ON EXPRESSING THE RAW POWER AND REBELLIOUS SPIRIT OF ROCK THROUGH AN INFERNAL VISUAL AESTHETIC. THE DEVIL FIGURE FUNCTIONS AS A SYMBOL OF CONFRONTATION WITH FEAR, DESIRE, AND THE FORBIDDEN"
               data-image="https://ik.imagekit.io/sofiahernandez/Portfolio/album05.jpg"
             >
-              <div class="album-thumb-info">
-                <span class="alb-num">05</span>
-                <span class="alb-name">DEVIL CAME TO ME</span>
+              <div class="album-info">
+                <span class="album-num">05</span>
+                <span class="album-name">DEVIL CAME TO ME</span>
               </div>
-              <div class="album-thumb-img-wrapper">
+              <div class="contenedor-album-img">
                 <img
                   src="https://ik.imagekit.io/sofiahernandez/Portfolio/album05.jpg"
                   alt="Devil"
-                  class="album-thumb-img"
+                  class="album-img"
                 />
               </div>
             </div>
@@ -397,19 +397,19 @@
         </div>
       </section>
 
-      <section id="editorial" class="editorial-section">
+      <section id="editorial" class="seccion-editorial">
         <div class="container-fluid px-md-5 px-3 mb-5">
           <div class="row align-items-end g-0 flex-md-nowrap">
             <div class="col-md-7 col-12 mb-4 mb-md-0">
-              <h2 class="editorial-big-title">EDI<br />TO<br />RIAL</h2>
+              <h2 class="titulo-editorial">EDI<br />TO<br />RIAL</h2>
             </div>
 
             <div class="col-md-5 col-12 d-flex justify-content-md-end">
-              <div class="editorial-cover-wrapper">
+              <div class="contenedor-portada-editorial">
                 <img
                   src="https://ik.imagekit.io/sofiahernandez/Portfolio/anima01.png"
                   alt="Anima Cover"
-                  class="img-fluid editorial-cover"
+                  class="img-fluid portada-editorial"
                 />
               </div>
             </div>
@@ -417,8 +417,8 @@
         </div>
 
         <div class="container-fluid px-md-5 px-3 mt-5 mb-4">
-          <div class="editorial-text-block">
-            <h3 class="editorial-description">
+          <div class="introduccion-editorial">
+            <h3 class="texto-editorial">
               THIS SECTION SHOWCASES MY EDITORIAL DESIGN WORK THROUGH ÁNIMA, AN
               ART PHOTOGRAPHY MAGAZINE THAT COMBINES POWERFUL AND INTENSE IMAGES
               WITH EQUALLY STRIKING TYPOGRAPHY. EACH PHOTOGRAPH IS ACCOMPANIED
@@ -429,7 +429,7 @@
               ORIGINS, AS THE MAGAZINE WAS CONCEIVED DURING MY ERASMUS EXCHANGE
               IN ITALY, INTEGRATING VISUAL LANGUAGE AND PERSONAL EXPLORATION.
             </h3>
-            <div class="editorial-meta">
+            <div class="editorial-info">
               <span>PITARK</span>
               <span class="text-center">ANIMA</span>
               <span class="text-end">PHOTOSHOP / INDESIGN</span>
@@ -438,9 +438,9 @@
           </div>
         </div>
 
-        <div class="marquee-wrapper">
-          <div class="marquee-track marquee-anima">
-            <div class="marquee-group">
+        <div class="carrusel-editorial">
+          <div class="cinta-carrusel carrusel-anima">
+            <div class="imagenes-carrusel">
               <img
                 src="https://ik.imagekit.io/sofiahernandez/Portfolio/anima02.png"
                 alt="Anima spread 1"
@@ -462,7 +462,7 @@
                 alt="Anima spread 5"
               />
             </div>
-            <div class="marquee-group" aria-hidden="true">
+            <div class="imagenes-carrusel">
               <img
                 src="https://ik.imagekit.io/sofiahernandez/Portfolio/anima02.png"
                 alt="Anima spread 1"
@@ -488,8 +488,8 @@
         </div>
 
         <div class="container-fluid px-md-5 px-3 mt-5 pt-5">
-          <div class="editorial-text-block">
-            <h3 class="editorial-description">
+          <div class="introduccion-editorial">
+            <h3 class="texto-editorial">
               THIS SECTION SHOWCASES MY EDITORIAL DESIGN WORK THROUGH DARK, A
               MAGAZINE THAT PRESENTS MY PHOTOGRAPHY PROJECT INSPIRED BY THE
               UNSETTLING DUALITY EXPLORED IN TWIN PEAKS. RATHER THAN SEEKING
@@ -501,7 +501,7 @@
               REALITY WHERE GOOD IS TAINTED BY EVIL, AND NOTHING IS EVER
               COMPLETELY ONE THING OR THE OTHER.
             </h3>
-            <div class="editorial-meta">
+            <div class="editorial-info">
               <span>PITARK</span>
               <span class="text-center">TWIN PEAKS</span>
               <span class="text-end">PHOTOSHOP / INDESIGN</span>
@@ -510,9 +510,9 @@
           </div>
         </div>
 
-        <div class="marquee-wrapper marquee-wrapper--last">
-          <div class="marquee-track marquee-twinpeaks">
-            <div class="marquee-group">
+        <div class="carrusel-editorial carrusel-editorial-variante">
+          <div class="cinta-carrusel carrusel-twinpeaks">
+            <div class="imagenes-carrusel">
               <img
                 src="https://ik.imagekit.io/sofiahernandez/Portfolio/twinpeaks02.png"
                 alt="TP spread 2"
@@ -538,7 +538,7 @@
                 alt="TP spread 7"
               />
             </div>
-            <div class="marquee-group" aria-hidden="true">
+            <div class="imagenes-carrusel" aria-hidden="true">
               <img
                 src="https://ik.imagekit.io/sofiahernandez/Portfolio/twinpeaks02.png"
                 alt="TP spread 2"
@@ -568,16 +568,20 @@
         </div>
       </section>
 
-      <div id="posterModalOverlay" class="modal-overlay">
-        <button id="modalCloseBtn" class="modal-close-text" aria-label="Cerrar">
+      <div id="posterModalOverlay" class="fondo-modal">
+        <button
+          id="modalCloseBtn"
+          class="boton-close-modal"
+          aria-label="Cerrar"
+        >
           CLOSE
         </button>
         <div class="modal-content-container">
-          <div class="modal-text-side">
+          <div class="modal-text">
             <h3 id="modalTitle" class="modal-title"></h3>
-            <div id="modalDescription" class="modal-description"></div>
+            <div id="modalDescription" class="modal-descripcion"></div>
           </div>
-          <div class="modal-image-side">
+          <div class="columna-imagen-modal">
             <img
               id="modalImage"
               class="modal-image"
@@ -588,14 +592,14 @@
         </div>
       </div>
 
-      <section id="design3d" class="design3d-section">
+      <section id="design3d" class="seccion-3d">
         <div class="container-fluid px-3 px-lg-4">
-          <div class="design3d-header">
-            <h2 class="design3d-title-main">3D DESIGN</h2>
-            <h3 class="design3d-title-sub">(BEST WORKS)<br />22-25</h3>
+          <div class="header-3d">
+            <h2 class="titulo-3d">3D DESIGN</h2>
+            <h3 class="subtitulo-3d">(BEST WORKS)<br />22-25</h3>
           </div>
 
-          <div class="design3d-grid">
+          <div class="galeria-3d">
             <!-- 01 NIKE JORDAN -->
             <div
               class="design3d-item js-open-modal"
@@ -648,11 +652,11 @@
         </div>
       </section>
 
-      <section id="gallery" class="gallery-section">
+      <section id="gallery" class="seccion-gallery">
         <div class="container-fluid px-3 px-lg-4">
-          <h2 class="gallery-title-top">GALLERY</h2>
+          <h2 class="titulo-gallery">GALLERY</h2>
 
-          <h3 class="gallery-subtitle">(PORTRAITS)</h3>
+          <h3 class="subtitulo-gallery-portraits">(PORTRAITS)</h3>
 
           <div class="gallery-portraits" data-gallery="portraits">
             <button
@@ -754,7 +758,9 @@
             </button>
           </div>
 
-          <h3 class="gallery-subtitle gallery-subtitle--city">(CITY LIGHTS)</h3>
+          <h3 class="subtitulo-gallery-portraits subtitulo-gallery-city">
+            (CITY LIGHTS)
+          </h3>
 
           <div class="gallery-city" data-gallery="city">
             <button
@@ -858,24 +864,24 @@
         </div>
       </section>
 
-      <section id="contact" class="contact-section">
+      <section id="contact" class="seccion-contact">
         <div class="container-fluid p-0 h-100">
           <div class="row g-0 h-100 align-items-stretch">
             <div class="col-12 contact-content-col">
               <div class="contact-inner">
                 <div class="contact-top">
-                  <div class="contact-small">MADRID</div>
-                  <div class="contact-small text-center">
+                  <div class="contact-info">MADRID</div>
+                  <div class="contact-info text-center">
                     SOFÍA HERNÁNDEZ PITARCH
                   </div>
-                  <div class="contact-small text-end">GRAPHIC DESIGNER</div>
+                  <div class="contact-info text-end">GRAPHIC DESIGNER</div>
                 </div>
 
                 <h2 class="contact-title">(CONTACT ME)</h2>
 
                 <div class="contact-list">
                   <div class="contact-row">
-                    <span class="contact-key">GMAIL</span>
+                    <span class="tipo-contact">GMAIL</span>
                     <a
                       href="mailto:pitarkgraphicdesign@gmail.com"
                       class="contact-link"
@@ -885,7 +891,7 @@
                   </div>
 
                   <div class="contact-row">
-                    <span class="contact-key">LINKEDIN</span>
+                    <span class="tipo-contact">LINKEDIN</span>
                     <a
                       href="https://www.linkedin.com/in/sofia-hernandez-pitarch"
                       target="_blank"
@@ -897,7 +903,7 @@
                   </div>
 
                   <div class="contact-row">
-                    <span class="contact-key">INSTAGRAM</span>
+                    <span class="tipo-contact">INSTAGRAM</span>
                     <a
                       href="https://www.instagram.com/pitarkdesign"
                       target="_blank"
@@ -909,7 +915,7 @@
                   </div>
 
                   <div class="contact-row">
-                    <span class="contact-key">BEHANCE</span>
+                    <span class="tipo-contact">BEHANCE</span>
                     <a
                       href="https://www.behance.net/pitarkdesign"
                       target="_blank"
@@ -921,7 +927,7 @@
                   </div>
 
                   <div class="contact-row">
-                    <span class="contact-key">PHONE</span>
+                    <span class="tipo-contact">PHONE</span>
                     <a href="tel:+34646943013" class="contact-link">
                       +34 646 943 013
                     </a>

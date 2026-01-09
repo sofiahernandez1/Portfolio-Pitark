@@ -1,19 +1,21 @@
-// header con sombra al hacer scroll
-const header = document.querySelector(".site-header");
-window.addEventListener("scroll", () =>
-  header.classList.toggle("scrolled", window.scrollY > 2)
-);
+// HEADER: con sombra al hacer scroll
+const header = document.querySelector(".header-fijo");
+if (header) {
+  window.addEventListener("scroll", () =>
+    header.classList.toggle("scrolled", window.scrollY > 2)
+  );
+}
 
-// cerrar menú al click en móvil
+// MENÚ MOVIL: cerrarmenú al hacer click
 document.querySelectorAll("#menu .nav-link").forEach((link) => {
   link.addEventListener("click", () => {
     const menu = document.querySelector("#menu");
-    if (!menu.classList.contains("show")) return;
+    if (!menu || !menu.classList.contains("show")) return;
     bootstrap.Collapse.getOrCreateInstance(menu).hide();
   });
 });
 
-// bigtype: mover letras con scroll
+// MENU GRANDE (BIGTYPE): mover letras al hacer scroll
 const bigTypeSection = document.querySelector("#bigType");
 const bigTypeLines = document.querySelector("#bigTypeLines");
 const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
@@ -36,13 +38,14 @@ window.addEventListener("resize", updateBigType);
 updateBigType();
 
 document.addEventListener("DOMContentLoaded", () => {
-  // --- modal posters (y también 3D porque comparte clase) ---
+  // MODAL POSTER Y 3D
   const posterOverlay = document.getElementById("posterModalOverlay");
   const posterClose = document.getElementById("modalCloseBtn");
   const modalTitle = document.getElementById("modalTitle");
   const modalDesc = document.getElementById("modalDescription");
   const modalImg = document.getElementById("modalImage");
 
+  // MODAL POSTER / 3D: abrir modal
   const openPoster = (el) => {
     modalTitle.innerHTML = el.getAttribute("data-title");
     modalDesc.innerHTML = el.getAttribute("data-description");
@@ -52,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "hidden";
   };
 
+  // MODAL POSTER / 3D: cerrar modal
   const closePoster = () => {
     posterOverlay.classList.remove("is-active");
     document.body.style.overflow = "";
@@ -59,14 +63,17 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   document
-    .querySelectorAll(".js-open-modal")
+    .querySelectorAll(
+      ".poster-item.js-open-modal, .design3d-item.js-open-modal"
+    )
     .forEach((item) => item.addEventListener("click", () => openPoster(item)));
+
   posterClose.addEventListener("click", (e) => {
     e.stopPropagation();
     closePoster();
   });
 
-  // --- modal albums ---
+  // MODAL ALBUM
   const albumOverlay = document.getElementById("albumModalOverlay");
   const albumClose = document.getElementById("albumModalCloseBtn");
   const albTitle = document.getElementById("albModalTitle");
@@ -74,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const albDesc = document.getElementById("albModalDesc");
   const albImg = document.getElementById("albModalImg");
 
+  // MODAL ALBUM: abrir modal
   const openAlbum = (el) => {
     albTitle.innerHTML = el.getAttribute("data-title");
     albMeta.textContent = el.getAttribute("data-meta");
@@ -83,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "hidden";
   };
 
+  // MODAL ALBUM: cerrar modal
   const closeAlbum = () => {
     albumOverlay.classList.remove("is-active");
     document.body.style.overflow = "";
@@ -90,21 +99,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   document
-    .querySelectorAll(".js-open-album")
+    .querySelectorAll(".album-item.js-open-album")
     .forEach((item) => item.addEventListener("click", () => openAlbum(item)));
+
   albumClose.addEventListener("click", (e) => {
     e.stopPropagation();
     closeAlbum();
   });
 
-  // cerrar con ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key !== "Escape") return;
-    if (posterOverlay.classList.contains("is-active")) closePoster();
-    if (albumOverlay.classList.contains("is-active")) closeAlbum();
-  });
-
-  // --- gallery toggle ---
+  // GALLERY: activar/desactivar imágenes
   document.querySelectorAll("[data-gallery]").forEach((gallery) => {
     const items = gallery.querySelectorAll("[data-gallery-item]");
 
